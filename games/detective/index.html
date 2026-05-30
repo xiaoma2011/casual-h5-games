@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Find the Thief</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-stage" aria-label="Foxglove Files game board">
+        <div class="top-bar">
+          <div>
+            <p class="eyebrow">Deduction game</p>
+            <h1>Find the Thief</h1>
+          </div>
+          <button id="newGameButton" class="restart-button" type="button" aria-label="Restart case" title="Restart">
+            Restart
+          </button>
+        </div>
+
+        <div class="board-wrap">
+          <canvas id="boardCanvas" width="1400" height="1000" aria-label="Detective board"></canvas>
+        </div>
+      </section>
+
+      <aside class="side-panel" aria-label="Case controls">
+        <section class="case-card status-card">
+          <div class="status-line">
+            <span id="phaseLabel">Ready</span>
+            <strong id="movesLabel">Choose action</strong>
+          </div>
+          <div class="mode-choice" aria-label="Turn action">
+            <button id="searchModeButton" class="mode-button active" type="button">Search For Clues</button>
+            <button id="revealModeButton" class="mode-button" type="button">Reveal Suspects</button>
+          </div>
+          <div class="dice-row" id="diceRow" aria-live="polite">
+            <span class="die">?</span>
+            <span class="die">?</span>
+            <span class="die">?</span>
+          </div>
+          <div class="action-row">
+            <button id="rollButton" class="primary-button" type="button">Roll</button>
+          </div>
+          <button id="identifyButton" class="secondary-button identify-button" type="button">Identify the Thief</button>
+        </section>
+
+        <section class="case-card">
+          <div class="section-title">
+            <h2>Fox Path</h2>
+            <span id="foxLabel">0 / 18</span>
+          </div>
+          <div class="fox-track" id="foxTrack"></div>
+        </section>
+
+        <section class="case-card">
+          <div class="section-title">
+            <h2>Decoder</h2>
+            <span id="clueCount">0 found</span>
+          </div>
+          <ul id="clueList" class="clue-list"></ul>
+        </section>
+
+        <section class="case-card suspects-card">
+          <div class="section-title">
+            <h2>Suspects</h2>
+            <span id="suspectCount">16 left</span>
+          </div>
+          <div id="suspectGrid" class="suspect-grid"></div>
+        </section>
+      </aside>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <dialog id="caseDialog" class="case-dialog">
+      <h2 id="dialogTitle">Case closed</h2>
+      <p id="dialogText"></p>
+      <button id="dialogButton" class="primary-button" type="button">Play again</button>
+    </dialog>
+
+    <script src="game.js"></script>
+  </body>
+</html>
