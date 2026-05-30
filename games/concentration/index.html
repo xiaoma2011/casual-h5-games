@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concentration</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar" aria-label="Game status">
+        <div>
+          <a class="back-link" href="../../index.html" aria-label="Back to game selection">Back</a>
+          <p class="eyebrow">52 Cards</p>
+          <h1>Concentration</h1>
+        </div>
+        <div class="stats" aria-live="polite">
+          <div class="stat">
+            <span class="stat-label">Moves</span>
+            <strong id="moves">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Matched</span>
+            <strong id="matched">0/52</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Time</span>
+            <strong id="timer">00:00</strong>
+          </div>
+          <button class="reset-button" id="resetButton" type="button" aria-label="Start a new game">
+            New Game
+          </button>
+        </div>
+      </header>
+
+      <section class="board-wrap" aria-label="Concentration card board">
+        <div class="board" id="board"></div>
+      </section>
+
+      <dialog class="win-dialog" id="winDialog" aria-labelledby="winTitle">
+        <div class="dialog-content">
+          <p class="eyebrow">Victory</p>
+          <h2 id="winTitle">All cards matched</h2>
+          <p id="winSummary"></p>
+          <button class="reset-button" id="dialogResetButton" type="button">Play Again</button>
+        </div>
+      </dialog>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -3,49 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Concentration</title>
+    <title>Mini Game Arcade</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="game-shell">
-      <header class="topbar" aria-label="Game status">
-        <div>
-          <p class="eyebrow">52 Cards</p>
-          <h1>Concentration</h1>
-        </div>
-        <div class="stats" aria-live="polite">
-          <div class="stat">
-            <span class="stat-label">Moves</span>
-            <strong id="moves">0</strong>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Matched</span>
-            <strong id="matched">0/52</strong>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Time</span>
-            <strong id="timer">00:00</strong>
-          </div>
-          <button class="reset-button" id="resetButton" type="button" aria-label="Start a new game">
-            New Game
-          </button>
-        </div>
+    <main class="arcade-shell">
+      <header class="hero" aria-label="Mini game selection">
+        <p class="eyebrow">Mini Games</p>
+        <h1>&#36873;&#25321;&#19968;&#20010;&#23567;&#28216;&#25103;</h1>
       </header>
 
-      <section class="board-wrap" aria-label="Concentration card board">
-        <div class="board" id="board"></div>
+      <section class="game-grid" aria-label="Available games">
+        <a class="game-card concentration-card" href="games/concentration/index.html">
+          <span class="game-icon-preview" aria-hidden="true">
+            <img src="games/concentration/icon.png" alt="">
+          </span>
+          <span class="game-copy">
+            <span class="game-title">Concentration</span>
+            <span class="game-meta">52 &#24352;&#25169;&#20811;&#29260; &middot; &#28857;&#25968;&#37197;&#23545; &middot; 7 x 8 &#24067;&#23616;</span>
+          </span>
+          <span class="play-label">Play</span>
+        </a>
+
+        <a class="game-card vikings-card" href="games/vikings/index.html">
+          <span class="game-icon-preview" aria-hidden="true">
+            <img src="games/vikings/icon.png" alt="">
+          </span>
+          <span class="game-copy">
+            <span class="game-title">Vikings</span>
+            <span class="game-meta">&#26032;&#30340;&#23567;&#28216;&#25103; &middot; Vikings</span>
+          </span>
+          <span class="play-label">Play</span>
+        </a>
       </section>
-
-      <dialog class="win-dialog" id="winDialog" aria-labelledby="winTitle">
-        <div class="dialog-content">
-          <p class="eyebrow">Victory</p>
-          <h2 id="winTitle">All cards matched</h2>
-          <p id="winSummary"></p>
-          <button class="reset-button" id="dialogResetButton" type="button">Play Again</button>
-        </div>
-      </dialog>
     </main>
-
-    <script src="script.js"></script>
   </body>
 </html>
